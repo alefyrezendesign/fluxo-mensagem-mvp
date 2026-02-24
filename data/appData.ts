@@ -447,7 +447,8 @@ Gostaríamos também de te fazer uma pergunta simples para sabermos como te acom
 Fique à vontade para responder. O importante é você estar bem cuidado(a)!
 
 Att, Secretaria MVP`,
-                nextAction: 'Aguardar resposta para aplicar NC4-V3 (quer congregar) ou encerrar com cuidado.',
+                internalAction: 'Aguardar resposta para aplicar NC4-V3 (quer congregar) ou encerrar com cuidado.',
+                nextMessageId: 'NC4-V3',
             },
             {
                 id: 'NC4-V2',
@@ -467,7 +468,8 @@ Queremos apenas saber como te apoiar melhor nessa jornada!
 De qualquer forma, estamos orando e torcendo por você. 💜
 
 Att, Secretaria MVP`,
-                nextAction: 'Aguardar resposta. SE não houver resposta em 3 dias, registrar como "Sem resposta" e informar líder responsável.',
+                internalAction: 'Aguardar resposta. SE não houver resposta em 3 dias, registrar como "Sem resposta" e informar líder responsável.',
+                nextMessageId: 'NC4-V3',
             },
             {
                 id: 'NC4-V3',
@@ -483,7 +485,7 @@ Gostaríamos muito de apresentar você à igreja em um dos nossos cultos para ce
 *Tudo bem nós agendarmos esse momento com ele?*
 
 Att, Secretaria MVP`,
-                nextAction: '🔴 AÇÃO URGENTE: Trocar status para "Alta Prioridade". Informar ao pastor com prioridade máxima. Avançar para NC4A.',
+                internalAction: '🔴 AÇÃO URGENTE: Trocar status para "Alta Prioridade". Informar ao pastor com prioridade máxima. Avançar para NC4A.',
             },
         ],
         attachments: [],
