@@ -95,7 +95,7 @@ export const StepCard: React.FC<{ step: Step; index: number; nextMessageStep?: S
                                                 <div className="text-[9px] font-black uppercase tracking-wider text-slate-600 mb-1">Trocar tags para</div>
                                                 <div className="flex flex-wrap gap-1">
                                                     {nextMessageStep.tags.map(t => (
-                                                        <span key={t} className="inline-flex items-center gap-0.5 bg-[#1a1535] border border-purple-800/30 text-purple-300 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                                                        <span key={t} className="inline-flex items-center gap-0.5 bg-sky-900/40 border border-sky-700/40 text-sky-300 text-[10px] font-bold px-2 py-0.5 rounded-full">
                                                             <Tag size={7} />{t}
                                                         </span>
                                                     ))}
