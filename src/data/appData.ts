@@ -579,10 +579,10 @@ Att, Secretaria MVP`,
         id: 'NC8',
         title: 'Convite — MVP 360',
         sendWhen: 'Por volta de 30 dias congregando (pode ser antes, conforme percepção do líder)',
-        goal: 'Apresentar o MVP 360 e convidar o novo membro a participar desta imersão sobre a visão e os pilares do ministério.',
+        goal: 'Apresentar o MVP 360 e convidar o novo membro a participar.',
         tags: ['Membro', 'Em Integração'],
         quickReply: '/nc8',
-        decisionNote: `⚠️ Atenção ao timing:\n• O ideal é aguardar cerca de 30 dias congregando para o membro estar ambientado.\n• Se o líder perceber que a pessoa já está engajada e pronta, pode antecipar o convite.\n• Preencher a data/período do próximo MVP 360 antes de enviar.`,
+        decisionNote: `⚠️ Atenção ao timing:\n• O ideal é aguardar cerca de 30 dias congregando para o membro estar ambientado.\n• Preencher a data/período do próximo MVP 360 antes de enviar.`,
         message: `Olá, [Nome]! Graça e paz! 😊
 
 Que alegria ver você crescendo e fazendo parte da nossa família! 💜
@@ -598,25 +598,81 @@ Queremos te convidar para algo muito especial: o *MVP 360*!
 
 São encontros práticos, cheios de vida e com muito espaço para perguntas e conexão.
 
-*Você toparia participar?*
+*Você toparia participar?*`,
+        attachments: [],
+    },
+    {
+        id: 'NC8A',
+        title: 'Confirmação de Interesse',
+        sendWhen: 'Após a pessoa responder que quer participar do MVP 360',
+        goal: 'Registrar o interesse sem prometer uma data imediata, dando tempo para a secretaria organizar a turma.',
+        tags: ['Membro', 'Em Integração'],
+        quickReply: '/nc8a',
+        message: `Que maravilha! 🎉 Ficamos muito felizes com a sua decisão!
 
-Me confirma aqui e em breve te passamos todos os detalhes da próxima turma! 🙌
+Já anotamos o seu interesse por aqui. Vou verificar qual é a próxima turma disponível do MVP 360 e em breve te retorno para explicar todos os detalhes e confirmar com você, combinado?
+
+Até logo! 🙌`,
+    },
+    {
+        id: 'NC8B',
+        title: 'Verificar Próxima Turma',
+        sendWhen: 'Após enviar a confirmação de interesse (NC8A)',
+        goal: 'Encontrar a próxima turma do MVP 360 e garantir a vaga da pessoa.',
+        tags: ['Membro', 'Em Integração'],
+        isActionStep: true,
+        actionItems: [
+            'Verificar a data e horário da próxima turma do MVP 360.',
+            'Encaixar e aprovar a participação do membro nesta turma no sistema.',
+            'Avançar para responder com a confirmação (NC8C).',
+        ],
+    },
+    {
+        id: 'NC8C',
+        title: 'Aviso e Detalhes da Turma',
+        sendWhen: 'Após confirmar a vaga e as datas da turma (ação NC8B)',
+        goal: 'Informar ao membro exatamente quando o MVP 360 ocorrerá.',
+        tags: ['Membro', 'Em Integração'],
+        quickReply: '/nc8c',
+        message: `Olá, [Nome]! Tudo bem?
+
+Passando para confirmar que já temos a sua turma do *MVP 360* definida! 🚀
+
+As nossas aulas acontecerão a partir do dia *[DATA INÍCIO]* até *[DATA FIM]*, sempre às *[HORÁRIO]*.
+
+Coloque na agenda e prepare o coração! Se tiver qualquer dúvida até lá, é só me chamar.
 
 Att, Secretaria MVP`,
         attachments: [{ label: 'Arte / Informativo do MVP 360 (quando disponível)', link: '' }],
     },
     {
+        id: 'NC8D',
+        title: 'Início do MVP 360 — Material',
+        sendWhen: 'Na data da primeira aula (ou na véspera)',
+        goal: 'Motivar a pessoa e enviar o link do material de leitura/apoio do curso.',
+        tags: ['Membro', 'Em Integração'],
+        quickReply: '/nc8d',
+        message: `Olá, [Nome]! Chegou o dia! 🤩
+
+Hoje começa a nossa jornada no *MVP 360* e estamos com muita expectativa para o que Deus vai fazer.
+
+Para você já ir se preparando, segue o link com o nosso material de leitura e conteúdo do curso:
+[LINK DO MATERIAL]
+
+Te esperamos mais tarde! Vá com o coração aberto! 🔥`,
+    },
+    {
         id: 'NC9',
         title: 'Integração Concluída — Pós MVP 360',
-        sendWhen: 'Após a participação e conclusão da pessoa no MVP 360',
+        sendWhen: 'Após o término de todas as aulas do MVP 360 pela pessoa',
         goal: 'Marcar e registrar formalmente que a pessoa concluiu a trilha do MVP 360 e agora é um membro 100% integrado.',
         tags: ['Membro', 'Integrado'],
         isActionStep: true,
         actionItems: [
-            'Confirmar nome na lista de presença do MVP 360.',
+            'Confirmar que a pessoa participou e concluiu todas as aulas do MVP 360.',
             'Ir ao WhatsApp Business e TROCAR A TAG de "Em Integração" para "Integrado".',
-            'Ir ao sistema Enuves e atualizar o status do membro para Integrado/Ativo.',
-            'Opcional: enviar uma mensagem parabenizando pela conclusão do MVP 360 e incentivando a servir no voluntariado.',
+            'Ir ao sistema Enuves e atualizar o status do membro para Integrado.',
+            'Opcional: enviar uma mensagem parabenizando pela conclusão do MVP 360 e incentivando a atuar no voluntariado.',
         ],
     },
 ];
@@ -653,7 +709,7 @@ export const tipSections: TipSection[] = [
         items: [
             {
                 title: 'O que são respostas rápidas?',
-                body: `São mensagens pré-salvas com um atalho (começa com /).\nDigite a barra "/" no chat e escolha o atalho — a mensagem aparece completa automaticamente.\n\n✅ Atalhos padrão MVP:\n/nc1 → Boas-Vindas (Novo Convertido)\n/nc2-v1 → Programação Boa Vista\n/nc2-v2 → Programação Abacatão\n/nc3 → Convite Domingo\n/nc4-v1 → Verificação (compareceu)\n/nc4-v2 → Verificação (não compareceu)\n/nc4-v3 → Confirmação Congregar\n/nc5 → Apresentação na Igreja\n/nc7 → Integração Geração\n/nc8 → Convite MVP 360\n/vis1-v1 → Boas-Vindas Visitante (Boa Vista)\n/vis1-v2 → Boas-Vindas Visitante (Abacatão)\n/vis2 → Convite 1.º Domingo\n/vis3 → Convite 2.º Domingo\n/vis4 → Cuidado Intermediário\n/vis5-v1 → Verificação (compareceu)\n/vis5-v2 → Verificação (ausente)`,
+                body: `São mensagens pré-salvas com um atalho (começa com /).\nDigite a barra "/" no chat e escolha o atalho — a mensagem aparece completa automaticamente.\n\n✅ Atalhos padrão MVP:\n/nc1 → Boas-Vindas (Novo Convertido)\n/nc2-v1 → Programação Boa Vista\n/nc2-v2 → Programação Abacatão\n/nc3 → Convite Domingo\n/nc4-v1 → Verificação (compareceu)\n/nc4-v2 → Verificação (não compareceu)\n/nc4-v3 → Confirmação Congregar\n/nc5 → Apresentação na Igreja\n/nc7 → Integração Geração\n/nc8 → Convite MVP 360\n/nc8a → Confirmação Interesse MVP\n/nc8c → Aviso Detalhes Turma\n/nc8d → Início MVP Material\n/vis1-v1 → Boas-Vindas Visitante (Boa Vista)\n/vis1-v2 → Boas-Vindas Visitante (Abacatão)\n/vis2 → Convite 1.º Domingo\n/vis3 → Convite 2.º Domingo\n/vis4 → Cuidado Intermediário\n/vis5-v1 → Verificação (compareceu)\n/vis5-v2 → Verificação (ausente)`,
             },
             {
                 title: 'Como cadastrar um atalho',
