@@ -415,7 +415,7 @@ Att, Secretaria MVP`,
         goal: 'Verificar a presença no culto, perguntar sobre o interesse em congregar e direcionar para o próximo passo.',
         tags: ['Novo Convertido', 'Em Acompanhamento'],
         hasVariants: true,
-        decisionNote: `⚠️ Esta etapa tem variações. Escolha conforme a situação:\n• SE compareceu ao culto → usar NC4V1\n• SE NÃO compareceu → usar NC4V2\n• SE respondeu que QUER CONGREGAR → usar NC4V3 e notificar o pastor com urgência`,
+        decisionNote: `⚠️ Esta etapa tem variações. Escolha conforme a situação:\n• SE compareceu ao culto → usar NC4V1\n• SE NÃO compareceu → usar NC4V2\n• SE respondeu que QUER CONGREGAR → usar NC4V3 e notificar o pastor com urgência\n• SE respondeu que NÃO VAI CONGREGAR → usar NC4V4 e encerrar`,
         variants: [
             {
                 id: 'NC4V1',
@@ -439,7 +439,7 @@ Att, Secretaria MVP`,
             {
                 id: 'NC4V2',
                 whenToUse: 'SE NÃO compareceu ao culto de domingo',
-                tags: ['Novo Convertido', 'Ausente'],
+                tags: ['Novo Convertido', 'Em Acompanhamento'],
                 quickReply: '/nc4v2',
                 message: `Olá, [Nome]! Graça e paz!
 
@@ -459,8 +459,8 @@ Att, Secretaria MVP`,
             },
             {
                 id: 'NC4V3',
-                whenToUse: 'SE respondeu que QUER CONGREGAR (resposta ao NC4V1 ou NC4V2)',
-                tags: ['Novo Convertido', 'Alta Prioridade'],
+                whenToUse: 'Vai congregar conosco',
+                tags: ['Novo Convertido', 'Em Acompanhamento'],
                 quickReply: '/nc4v3',
                 message: `Que alegria! Ficamos *muito felizes* por você estar congregando conosco! 🎉
 
@@ -472,6 +472,21 @@ Gostaríamos muito de apresentar você à igreja em um dos nossos cultos para ce
 
 Att, Secretaria MVP`,
                 internalAction: '🔴 AÇÃO URGENTE: Trocar status para "Alta Prioridade". Informar ao pastor com prioridade máxima. Avançar para NC4A.',
+            },
+            {
+                id: 'NC4V4',
+                whenToUse: 'Não vai congregar conosco',
+                tags: ['Novo Convertido', 'Em Acompanhamento'],
+                quickReply: '/nc4v4',
+                message: `Amém, que bom! 🙌
+
+Ficamos muito felizes por você. 🎉
+
+Saiba que a nossa casa está sempre de portas abertas. Fique à vontade para nos fazer uma visita quando desejar. Que Deus abençoe grandemente a sua caminhada!
+
+Att, Secretaria MVP`,
+                internalAction: 'A partir de agora, trocar a tag para "Visitante" e incluí-lo no fluxo e lista de transmissão de visitantes.',
+                nextMessageId: undefined,
             },
         ],
         attachments: [],
@@ -709,7 +724,7 @@ export const tipSections: TipSection[] = [
         items: [
             {
                 title: 'O que são respostas rápidas?',
-                body: `São mensagens pré-salvas com um atalho (começa com /).\nDigite a barra "/" no chat e escolha o atalho — a mensagem aparece completa automaticamente.\n\n✅ Atalhos padrão MVP:\n/nc1 → Boas-Vindas (Novo Convertido)\n/nc2v1 → Programação Boa Vista\n/nc2v2 → Programação Abacatão\n/nc3 → Convite Domingo\n/nc4v1 → Verificação (compareceu)\n/nc4v2 → Verificação (não compareceu)\n/nc4v3 → Confirmação Congregar\n/nc5 → Apresentação na Igreja\n/nc7 → Integração Geração\n/nc8 → Convite MVP 360\n/nc8v2 → Confirmação Interesse MVP\n/nc8b → Aviso Detalhes Turma\n/nc8c → Início MVP Material\n/vis1v1 → Boas-Vindas Visitante (Boa Vista)\n/vis1v2 → Boas-Vindas Visitante (Abacatão)\n/vis2 → Convite 1.º Domingo\n/vis3 → Convite 2.º Domingo\n/vis4 → Cuidado Intermediário\n/vis5v1 → Verificação (compareceu)\n/vis5v2 → Verificação (ausente)`,
+                body: `São mensagens pré-salvas com um atalho (começa com /).\nDigite a barra "/" no chat e escolha o atalho — a mensagem aparece completa automaticamente.\n\n✅ Atalhos padrão MVP:\n/nc1 → Boas-Vindas (Novo Convertido)\n/nc2v1 → Programação Boa Vista\n/nc2v2 → Programação Abacatão\n/nc3 → Convite Domingo\n/nc4v1 → Verificação (compareceu)\n/nc4v2 → Verificação (não compareceu)\n/nc4v3 → Confirmação Congregar\n/nc4v4 → Não vai congregar\n/nc5 → Apresentação na Igreja\n/nc7 → Integração Geração\n/nc8 → Convite MVP 360\n/nc8v2 → Confirmação Interesse MVP\n/nc8b → Aviso Detalhes Turma\n/nc8c → Início MVP Material\n/vis1v1 → Boas-Vindas Visitante (Boa Vista)\n/vis1v2 → Boas-Vindas Visitante (Abacatão)\n/vis2 → Convite 1.º Domingo\n/vis3 → Convite 2.º Domingo\n/vis4 → Cuidado Intermediário\n/vis5v1 → Verificação (compareceu)\n/vis5v2 → Verificação (ausente)`,
             },
             {
                 title: 'Como cadastrar um atalho',
