@@ -78,13 +78,13 @@ export const visitorSteps: Step[] = [
         tags: ['Visitante', 'Em Acompanhamento'],
         quickReply: '/vis1',
         hasVariants: true,
-        decisionNote: `⚠️ Esta etapa tem variações por UNIDADE.\n• SE o visitante foi à Boa Vista → usar VIS1-V1\n• SE o visitante foi ao Abacatão → usar VIS1-V2\n• SE a arte de programação oficial estiver pronta → usar VIS1-V3 (com arte, qualquer unidade)`,
+        decisionNote: `⚠️ Esta etapa tem variações por UNIDADE.\n• SE o visitante foi à Boa Vista → usar VIS1V1\n• SE o visitante foi ao Abacatão → usar VIS1V2\n• SE a arte de programação oficial estiver pronta → usar VIS1V3 (com arte, qualquer unidade)`,
         variants: [
             {
-                id: 'VIS1-V1',
+                id: 'VIS1V1',
                 whenToUse: 'SE a unidade for MVP BOA VISTA',
                 tags: ['Visitante', 'Em Acompanhamento'],
-                quickReply: '/vis1-v1',
+                quickReply: '/vis1v1',
                 message: `Olá, [Nome]! Tudo bem?
 
 Foi muito bom ter você conosco! Ficamos felizes com a sua visita. 😊
@@ -103,10 +103,10 @@ Att, Secretaria MVP`,
                 attachments: [{ label: 'Vídeo de Boas-Vindas dos Pastores', link: '' }],
             },
             {
-                id: 'VIS1-V2',
+                id: 'VIS1V2',
                 whenToUse: 'SE a unidade for MVP ABACATÃO',
                 tags: ['Visitante', 'Em Acompanhamento'],
-                quickReply: '/vis1-v2',
+                quickReply: '/vis1v2',
                 message: `Olá, [Nome]! Tudo bem?
 
 Foi muito bom ter você conosco! Ficamos felizes com a sua visita. 😊
@@ -125,10 +125,10 @@ Att, Secretaria MVP`,
                 attachments: [{ label: 'Vídeo de Boas-Vindas dos Pastores', link: '' }],
             },
             {
-                id: 'VIS1-V3',
+                id: 'VIS1V3',
                 whenToUse: 'SE a arte de programação oficial estiver disponível (qualquer unidade)',
                 tags: ['Visitante', 'Em Acompanhamento'],
-                quickReply: '/vis1-v3',
+                quickReply: '/vis1v3',
                 message: `Olá, [Nome]! Tudo bem?
 
 Foi muito bom ter você conosco! 😊 Segue nossa programação de cultos para você se planejar.
@@ -207,13 +207,13 @@ Att, Secretaria MVP`,
         tags: ['Visitante', 'Em Acompanhamento'],
         quickReply: '/vis5',
         hasVariants: true,
-        decisionNote: `⚠️ Esta etapa tem variações. Escolha conforme a situação:\n• SE compareceu aos cultos → usar VIS5-V1\n• SE esteve ausente ou sumiu → usar VIS5-V2\n• SE respondeu que QUER CONGREGAR → usar VIS5-V3 e notificar o pastor\n• SE disse que já congrega em outra casa → usar VIS5-V4 e encerrar`,
+        decisionNote: `⚠️ Esta etapa tem variações. Escolha conforme a situação:\n• SE compareceu aos cultos → usar VIS5V1\n• SE esteve ausente ou sumiu → usar VIS5V2\n• SE respondeu que QUER CONGREGAR → usar VIS5V3 e notificar o pastor\n• SE disse que já congrega em outra casa → usar VIS5V4 e encerrar`,
         variants: [
             {
-                id: 'VIS5-V1',
+                id: 'VIS5V1',
                 whenToUse: 'SE tem comparecido aos cultos',
                 tags: ['Visitante', 'Em Acompanhamento'],
-                quickReply: '/vis5-v1',
+                quickReply: '/vis5v1',
                 message: `Olá, [Nome]! Tudo bem?
 
 Tem sido uma alegria ter você conosco! 😊
@@ -225,10 +225,10 @@ Não precisa se preocupar — é só para sabermos como te acompanhar melhor. Fi
 Att, Secretaria MVP`,
             },
             {
-                id: 'VIS5-V2',
+                id: 'VIS5V2',
                 whenToUse: 'SE esteve ausente ou sumiu nos últimos dias',
                 tags: ['Visitante', 'Ausente'],
-                quickReply: '/vis5-v2',
+                quickReply: '/vis5v2',
                 message: `Olá, [Nome]! Tudo bem por aí?
 
 Sentimos sua falta! Só passando para saber como você está e dizer que as portas do MVP estão sempre abertas. 🙏
@@ -238,10 +238,10 @@ Quando quiser retornar, será uma alegria receber você novamente.
 Att, Secretaria MVP`,
             },
             {
-                id: 'VIS5-V3',
+                id: 'VIS5V3',
                 whenToUse: 'SE respondeu que QUER CONGREGAR',
                 tags: ['Visitante', 'Alta Prioridade'],
-                quickReply: '/vis5-v3',
+                quickReply: '/vis5v3',
                 message: `Que alegria! Ficamos muito felizes! 🎉
 
 Gostaríamos de agendar uma conversa rápida com nosso pastor para te receber formalmente.
@@ -253,10 +253,10 @@ Assim que confirmar, já comunicamos ao pastor com prioridade. 😊
 Att, Secretaria MVP`,
             },
             {
-                id: 'VIS5-V4',
+                id: 'VIS5V4',
                 whenToUse: 'SE disse que já congrega em OUTRA CASA',
                 tags: ['Visitante', 'Encerrado'],
-                quickReply: '/vis5-v4',
+                quickReply: '/vis5v4',
                 message: `Amém, que bom! 🙌
 
 Fico feliz em saber que você está sendo cuidado(a) em uma casa espiritual.
@@ -332,13 +332,13 @@ Att, Secretaria MVP`,
         tags: ['Novo Convertido', 'Em Acompanhamento'],
         quickReply: '/nc2',
         hasVariants: true,
-        decisionNote: `⚠️ Esta etapa tem variações por UNIDADE.\n• SE o novo convertido pertence à unidade Boa Vista → usar NC2-V1\n• SE o novo convertido pertence à unidade Abacatão → usar NC2-V2\n• SE a arte oficial de programação estiver disponível → SUBSTITUIR pela versão com arte (NC2-V3)`,
+        decisionNote: `⚠️ Esta etapa tem variações por UNIDADE.\n• SE o novo convertido pertence à unidade Boa Vista → usar NC2V1\n• SE o novo convertido pertence à unidade Abacatão → usar NC2V2\n• SE a arte oficial de programação estiver disponível → SUBSTITUIR pela versão com arte (NC2V3)`,
         variants: [
             {
-                id: 'NC2-V1',
+                id: 'NC2V1',
                 whenToUse: 'SE a unidade for MVP BOA VISTA',
                 tags: ['Novo Convertido', 'Em Acompanhamento'],
-                quickReply: '/nc2-v1',
+                quickReply: '/nc2v1',
                 message: `Olá, [Nome]! Graça e paz!
 
 Para você se programar, seguem os nossos dias de culto no *MVP Boa Vista*:
@@ -353,10 +353,10 @@ Att, Secretaria MVP`,
                 attachments: [{ label: 'Arte de Programação Oficial (quando disponível)', link: '' }],
             },
             {
-                id: 'NC2-V2',
+                id: 'NC2V2',
                 whenToUse: 'SE a unidade for MVP ABACATÃO',
                 tags: ['Novo Convertido', 'Em Acompanhamento'],
-                quickReply: '/nc2-v2',
+                quickReply: '/nc2v2',
                 message: `Olá, [Nome]! Graça e paz!
 
 Para você se programar, seguem os nossos dias de culto no *MVP Abacatão*:
@@ -371,10 +371,10 @@ Att, Secretaria MVP`,
                 attachments: [{ label: 'Arte de Programação Oficial (quando disponível)', link: '' }],
             },
             {
-                id: 'NC2-V3',
+                id: 'NC2V3',
                 whenToUse: 'SE a arte oficial de programação estiver disponível (qualquer unidade)',
                 tags: ['Novo Convertido', 'Em Acompanhamento'],
-                quickReply: '/nc2-v3',
+                quickReply: '/nc2v3',
                 message: `Olá, [Nome]! Segue a nossa programação de cultos para você conhecer melhor. 📅
 
 Sinta-se em casa. As portas estão sempre abertas para você.
@@ -415,13 +415,13 @@ Att, Secretaria MVP`,
         goal: 'Verificar a presença no culto, perguntar sobre o interesse em congregar e direcionar para o próximo passo.',
         tags: ['Novo Convertido', 'Em Acompanhamento'],
         hasVariants: true,
-        decisionNote: `⚠️ Esta etapa tem variações. Escolha conforme a situação:\n• SE compareceu ao culto → usar NC4-V1\n• SE NÃO compareceu → usar NC4-V2\n• SE respondeu que QUER CONGREGAR → usar NC4-V3 e notificar o pastor com urgência`,
+        decisionNote: `⚠️ Esta etapa tem variações. Escolha conforme a situação:\n• SE compareceu ao culto → usar NC4V1\n• SE NÃO compareceu → usar NC4V2\n• SE respondeu que QUER CONGREGAR → usar NC4V3 e notificar o pastor com urgência`,
         variants: [
             {
-                id: 'NC4-V1',
+                id: 'NC4V1',
                 whenToUse: 'SE compareceu ao culto de domingo',
                 tags: ['Novo Convertido', 'Em Acompanhamento'],
-                quickReply: '/nc4-v1',
+                quickReply: '/nc4v1',
                 message: `Olá, [Nome]! Graça e paz! 😊
 
 Foi *muito bom* cultuar ao seu lado mais uma vez!
@@ -433,14 +433,14 @@ Gostaríamos também de te fazer uma pergunta simples para sabermos como te acom
 Fique à vontade para responder. O importante é você estar bem cuidado(a)!
 
 Att, Secretaria MVP`,
-                internalAction: 'Aguardar resposta para aplicar NC4-V3 (quer congregar) ou encerrar com cuidado.',
-                nextMessageId: 'NC4-V3',
+                internalAction: 'Aguardar resposta para aplicar NC4V3 (quer congregar) ou encerrar com cuidado.',
+                nextMessageId: 'NC4V3',
             },
             {
-                id: 'NC4-V2',
+                id: 'NC4V2',
                 whenToUse: 'SE NÃO compareceu ao culto de domingo',
                 tags: ['Novo Convertido', 'Ausente'],
-                quickReply: '/nc4-v2',
+                quickReply: '/nc4v2',
                 message: `Olá, [Nome]! Graça e paz!
 
 Passando para saber como você está. Sentimos a sua falta no culto de domingo. 🙏
@@ -455,13 +455,13 @@ De qualquer forma, estamos orando e torcendo por você. 💜
 
 Att, Secretaria MVP`,
                 internalAction: 'Aguardar resposta. SE não houver resposta em 3 dias, registrar como "Sem resposta" e informar líder responsável.',
-                nextMessageId: 'NC4-V3',
+                nextMessageId: 'NC4V3',
             },
             {
-                id: 'NC4-V3',
-                whenToUse: 'SE respondeu que QUER CONGREGAR (resposta ao NC4-V1 ou NC4-V2)',
+                id: 'NC4V3',
+                whenToUse: 'SE respondeu que QUER CONGREGAR (resposta ao NC4V1 ou NC4V2)',
                 tags: ['Novo Convertido', 'Alta Prioridade'],
-                quickReply: '/nc4-v3',
+                quickReply: '/nc4v3',
                 message: `Que alegria! Ficamos *muito felizes* por você estar congregando conosco! 🎉
 
 Será uma bênção caminhar juntos.
@@ -479,7 +479,7 @@ Att, Secretaria MVP`,
     {
         id: 'NC4A',
         title: 'Agendar Bate-papo com o Pastor',
-        sendWhen: 'Imediatamente após o novo convertido confirmar que quer congregar (NC4-V3)',
+        sendWhen: 'Imediatamente após o novo convertido confirmar que quer congregar (NC4V3)',
         goal: 'Garantir que o bate-papo pastoral seja agendado com máxima prioridade para avançar para a etapa de apresentação oficial.',
         tags: ['Novo Convertido', 'Alta Prioridade'],
         isActionStep: true,
@@ -602,12 +602,12 @@ São encontros práticos, cheios de vida e com muito espaço para perguntas e co
         attachments: [],
     },
     {
-        id: 'NC8A',
+        id: 'NC8V2',
         title: 'Confirmação de Interesse',
         sendWhen: 'Após a pessoa responder que quer participar do MVP 360',
         goal: 'Registrar o interesse sem prometer uma data imediata, dando tempo para a secretaria organizar a turma.',
         tags: ['Membro', 'Em Integração'],
-        quickReply: '/nc8a',
+        quickReply: '/nc8v2',
         message: `Que maravilha! 🎉 Ficamos muito felizes com a sua decisão!
 
 Já anotamos o seu interesse por aqui. Vou verificar qual é a próxima turma disponível do MVP 360 e em breve te retorno para explicar todos os detalhes e confirmar com você, combinado?
@@ -615,9 +615,9 @@ Já anotamos o seu interesse por aqui. Vou verificar qual é a próxima turma di
 Até logo! 🙌`,
     },
     {
-        id: 'NC8B',
+        id: 'NC8_ACAO_TURMA',
         title: 'Verificar Próxima Turma',
-        sendWhen: 'Após enviar a confirmação de interesse (NC8A)',
+        sendWhen: 'Após enviar a confirmação de interesse (NC8V2)',
         goal: 'Encontrar a próxima turma do MVP 360 e garantir a vaga da pessoa.',
         tags: ['Membro', 'Em Integração'],
         isActionStep: true,
@@ -628,12 +628,12 @@ Até logo! 🙌`,
         ],
     },
     {
-        id: 'NC8C',
+        id: 'NC8B',
         title: 'Aviso e Detalhes da Turma',
-        sendWhen: 'Após confirmar a vaga e as datas da turma (ação NC8B)',
+        sendWhen: 'Após confirmar a vaga e as datas da turma (ação NC8_ACAO_TURMA)',
         goal: 'Informar ao membro exatamente quando o MVP 360 ocorrerá.',
         tags: ['Membro', 'Em Integração'],
-        quickReply: '/nc8c',
+        quickReply: '/nc8b',
         message: `Olá, [Nome]! Tudo bem?
 
 Passando para confirmar que já temos a sua turma do *MVP 360* definida! 🚀
@@ -646,12 +646,12 @@ Att, Secretaria MVP`,
         attachments: [{ label: 'Arte / Informativo do MVP 360 (quando disponível)', link: '' }],
     },
     {
-        id: 'NC8D',
+        id: 'NC8C',
         title: 'Início do MVP 360 — Material',
         sendWhen: 'Na data da primeira aula (ou na véspera)',
         goal: 'Motivar a pessoa e enviar o link do material de leitura/apoio do curso.',
         tags: ['Membro', 'Em Integração'],
-        quickReply: '/nc8d',
+        quickReply: '/nc8c',
         message: `Olá, [Nome]! Chegou o dia! 🤩
 
 Hoje começa a nossa jornada no *MVP 360* e estamos com muita expectativa para o que Deus vai fazer.
@@ -671,7 +671,7 @@ Te esperamos mais tarde! Vá com o coração aberto! 🔥`,
         actionItems: [
             'Confirmar que a pessoa participou e concluiu todas as aulas do MVP 360.',
             'Ir ao WhatsApp Business e TROCAR A TAG de "Em Integração" para "Integrado".',
-            'Ir ao sistema Enuves e atualizar o status do membro para Integrado.',
+            'Ir ao sistema Enuves e marcar o campo "Participou do MVP360" como "SIM".',
             'Opcional: enviar uma mensagem parabenizando pela conclusão do MVP 360 e incentivando a atuar no voluntariado.',
         ],
     },
@@ -709,7 +709,7 @@ export const tipSections: TipSection[] = [
         items: [
             {
                 title: 'O que são respostas rápidas?',
-                body: `São mensagens pré-salvas com um atalho (começa com /).\nDigite a barra "/" no chat e escolha o atalho — a mensagem aparece completa automaticamente.\n\n✅ Atalhos padrão MVP:\n/nc1 → Boas-Vindas (Novo Convertido)\n/nc2-v1 → Programação Boa Vista\n/nc2-v2 → Programação Abacatão\n/nc3 → Convite Domingo\n/nc4-v1 → Verificação (compareceu)\n/nc4-v2 → Verificação (não compareceu)\n/nc4-v3 → Confirmação Congregar\n/nc5 → Apresentação na Igreja\n/nc7 → Integração Geração\n/nc8 → Convite MVP 360\n/nc8a → Confirmação Interesse MVP\n/nc8c → Aviso Detalhes Turma\n/nc8d → Início MVP Material\n/vis1-v1 → Boas-Vindas Visitante (Boa Vista)\n/vis1-v2 → Boas-Vindas Visitante (Abacatão)\n/vis2 → Convite 1.º Domingo\n/vis3 → Convite 2.º Domingo\n/vis4 → Cuidado Intermediário\n/vis5-v1 → Verificação (compareceu)\n/vis5-v2 → Verificação (ausente)`,
+                body: `São mensagens pré-salvas com um atalho (começa com /).\nDigite a barra "/" no chat e escolha o atalho — a mensagem aparece completa automaticamente.\n\n✅ Atalhos padrão MVP:\n/nc1 → Boas-Vindas (Novo Convertido)\n/nc2v1 → Programação Boa Vista\n/nc2v2 → Programação Abacatão\n/nc3 → Convite Domingo\n/nc4v1 → Verificação (compareceu)\n/nc4v2 → Verificação (não compareceu)\n/nc4v3 → Confirmação Congregar\n/nc5 → Apresentação na Igreja\n/nc7 → Integração Geração\n/nc8 → Convite MVP 360\n/nc8v2 → Confirmação Interesse MVP\n/nc8b → Aviso Detalhes Turma\n/nc8c → Início MVP Material\n/vis1v1 → Boas-Vindas Visitante (Boa Vista)\n/vis1v2 → Boas-Vindas Visitante (Abacatão)\n/vis2 → Convite 1.º Domingo\n/vis3 → Convite 2.º Domingo\n/vis4 → Cuidado Intermediário\n/vis5v1 → Verificação (compareceu)\n/vis5v2 → Verificação (ausente)`,
             },
             {
                 title: 'Como cadastrar um atalho',
