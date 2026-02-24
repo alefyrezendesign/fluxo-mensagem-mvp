@@ -14,7 +14,6 @@ export interface Variant {
     quickReply: string;
     message: string;
     attachments?: Attachment[];
-    attachments?: Attachment[];
     internalAction?: string;
     nextMessageId?: string;
 }
@@ -35,7 +34,6 @@ export interface Step {
     hasVariants?: boolean;
     variants?: Variant[];
     message?: string;
-    attachments?: Attachment[];
     attachments?: Attachment[];
     internalAction?: string;
     nextMessageId?: string;
@@ -71,7 +69,6 @@ export const visitorSteps: Step[] = [
             'Aplicar tags "Visitante" + "Pendente" no WhatsApp Business.',
             'Agendar lembrete para VIS1 no dia seguinte.',
         ],
-        nextAction: 'Agendar VIS1 (Boas-Vindas + Programação) para o dia seguinte à visita.',
     },
     {
         id: 'VIS1',
@@ -104,7 +101,6 @@ As portas estão sempre abertas. Até breve!
 
 Att, Secretaria MVP`,
                 attachments: [{ label: 'Vídeo de Boas-Vindas dos Pastores', link: '' }],
-                nextAction: 'Trocar status para "Em Acompanhamento". Agendar lembrete para VIS2 no próximo domingo.',
             },
             {
                 id: 'VIS1-V2',
@@ -127,7 +123,6 @@ As portas estão sempre abertas. Até breve!
 
 Att, Secretaria MVP`,
                 attachments: [{ label: 'Vídeo de Boas-Vindas dos Pastores', link: '' }],
-                nextAction: 'Trocar status para "Em Acompanhamento". Agendar lembrete para VIS2 no próximo domingo.',
             },
             {
                 id: 'VIS1-V3',
@@ -147,11 +142,9 @@ Att, Secretaria MVP`,
                     { label: 'Arte de Programação Oficial MVP', link: '' },
                     { label: 'Vídeo de Boas-Vindas dos Pastores', link: '' },
                 ],
-                nextAction: 'Trocar status para "Em Acompanhamento". Agendar lembrete para VIS2 no próximo domingo.',
             },
         ],
         attachments: [],
-        nextAction: 'Trocar status para "Em Acompanhamento". Agendar lembrete para VIS2.',
     },
     {
         id: 'VIS2',
@@ -169,7 +162,6 @@ Venha adorar ao Senhor conosco. ✨ Te esperamos!
 
 Att, Secretaria MVP`,
         attachments: [{ label: 'Arte do Culto de Domingo', link: '' }],
-        nextAction: 'Observar presença no culto. Agendar VIS3 para o segundo domingo.',
     },
     {
         id: 'VIS3',
@@ -187,7 +179,6 @@ Hoje tem culto de domingo — venha adorar ao Senhor conosco e fortalecer essa c
 
 Att, Secretaria MVP`,
         attachments: [{ label: 'Arte do Culto de Domingo', link: '' }],
-        nextAction: 'Observar presença. Agendar VIS4 para quinta ou sexta da mesma semana.',
     },
     {
         id: 'VIS4',
@@ -207,7 +198,6 @@ Até breve. 💜
 
 Att, Secretaria MVP`,
         attachments: [],
-        nextAction: 'Aguardar retorno. Agendar lembrete para VIS5 no terceiro domingo ou logo após.',
     },
     {
         id: 'VIS5',
@@ -233,7 +223,6 @@ Gostaríamos de te fazer uma pergunta simples: *você tem interesse em congregar
 Não precisa se preocupar — é só para sabermos como te acompanhar melhor. Fique à vontade!
 
 Att, Secretaria MVP`,
-                nextAction: 'Aguardar resposta. SE quer congregar → VIS5-V3. SE outra casa → VIS5-V4.',
             },
             {
                 id: 'VIS5-V2',
@@ -247,7 +236,6 @@ Sentimos sua falta! Só passando para saber como você está e dizer que as port
 Quando quiser retornar, será uma alegria receber você novamente.
 
 Att, Secretaria MVP`,
-                nextAction: 'SE não houver resposta após 5 dias, trocar status para "Encerrado" e registrar como "Sem retorno".',
             },
             {
                 id: 'VIS5-V3',
@@ -263,7 +251,6 @@ Gostaríamos de agendar uma conversa rápida com nosso pastor para te receber fo
 Assim que confirmar, já comunicamos ao pastor com prioridade. 😊
 
 Att, Secretaria MVP`,
-                nextAction: '🔴 AÇÃO URGENTE: Trocar status para "Alta Prioridade". Notificar o pastor. Aguardar confirmação do bate-papo para iniciar fluxo Novo Convertido.',
             },
             {
                 id: 'VIS5-V4',
@@ -278,11 +265,9 @@ Saiba que as portas do MVP estão sempre abertas para você quando quiser nos vi
 
 Um abraço,
 Secretaria MVP`,
-                nextAction: 'Trocar status para "Encerrado". Sem próximo contato previsto.',
             },
         ],
         attachments: [],
-        nextAction: 'Aguardar resposta para escolher a variação correta.',
     },
 ];
 
@@ -298,15 +283,22 @@ export const newConvertSteps: Step[] = [
         tags: ['Novo Convertido', 'Pendente'],
         isActionStep: true,
         actionItems: [
-            'Abordar o novo convertido ao final do culto, antes de sair.',
+            'Abordar o novo convertido ao final do culto de forma leve, educada e gentil, sem ser intruso.',
             { text: 'Formulário NC — Boa Vista', link: 'https://forms.enuves.com/35925/1ReV8239ludrNKI35925', linkLabel: 'Abrir Formulário' },
             { text: 'Formulário NC — Abacatão', link: 'https://forms.enuves.com/35925/inoY3lxHWQzNUqE35925', linkLabel: 'Abrir Formulário' },
-            'Preencher: nome completo, telefone (WhatsApp), data da conversão e unidade.',
+            'Solicitar os dados de forma natural e amigável, pois são muito relevantes para o acompanhamento:',
+            '• Nome e sobrenome',
+            '• Data de nascimento (para inclusão de faixa etária e aniversário)',
+            '• Podemos pegar seu WhatsApp para comunicação?',
+            '• Data de conversão / retorno',
+            '• Como você conheceu nosso ministério?',
+            '• Você mora por aqui? (Em qual bairro você mora?)',
+            '• Você já foi batizado nas águas?',
+            '• Qual é o seu estado civil?',
             'Confirmar os dados diretamente com o novo convertido antes de sair.',
             'Aplicar tags "Novo Convertido" + "Pendente" no WhatsApp Business.',
             'Agendar lembrete para NC1 (Boas-Vindas) nos próximos 2 dias.',
         ],
-        nextAction: 'Agendar NC1 para até 2 dias após a conversão.',
     },
     {
         id: 'NC1',
@@ -331,7 +323,6 @@ Estamos muito felizes por você. 💜
 
 Att, Secretaria MVP`,
         attachments: [{ label: 'Vídeo dos Pastores — Boas-Vindas (Parabenizando pela decisão)', link: '' }],
-        nextAction: 'Trocar status para "Em Acompanhamento" após o envio. Agendar NC2 para o dia seguinte.',
     },
     {
         id: 'NC2',
@@ -360,7 +351,6 @@ Será uma alegria receber você. 🙏
 
 Att, Secretaria MVP`,
                 attachments: [{ label: 'Arte de Programação Oficial (quando disponível)', link: '' }],
-                nextAction: 'Agendar NC3 para o primeiro domingo após a conversão.',
             },
             {
                 id: 'NC2-V2',
@@ -379,7 +369,6 @@ Será uma alegria receber você. 🙏
 
 Att, Secretaria MVP`,
                 attachments: [{ label: 'Arte de Programação Oficial (quando disponível)', link: '' }],
-                nextAction: 'Agendar NC3 para o primeiro domingo após a conversão.',
             },
             {
                 id: 'NC2-V3',
@@ -394,11 +383,9 @@ Se precisar de algo, é só chamar!
 
 Att, Secretaria MVP`,
                 attachments: [{ label: 'Arte de Programação Oficial MVP', link: '' }],
-                nextAction: 'Agendar NC3 para o primeiro domingo após a conversão.',
             },
         ],
         attachments: [],
-        nextAction: 'Agendar NC3 para o primeiro domingo após a conversão.',
     },
     {
         id: 'NC3',
@@ -420,7 +407,6 @@ Você é sempre muito bem-vindo(a) na casa! Te esperamos! 💜
 
 Att, Secretaria MVP`,
         attachments: [{ label: 'Arte do Culto de Domingo', link: '' }],
-        nextAction: 'Observar presença do novo convertido no culto. Agendar NC4 para quinta ou sexta da semana seguinte.',
     },
     {
         id: 'NC4',
@@ -489,7 +475,6 @@ Att, Secretaria MVP`,
             },
         ],
         attachments: [],
-        nextAction: 'Aguardar a resposta para escolher a variação correta.',
     },
     {
         id: 'NC4A',
@@ -505,7 +490,6 @@ Att, Secretaria MVP`,
             'Anotar a data agendada no sistema ou agenda da secretaria.',
             'Agendar lembrete para NC5 no dia após a realização do bate-papo.',
         ],
-        nextAction: 'Após o bate-papo ser realizado, avançar para NC5 (Apresentação na Igreja).',
     },
     {
         id: 'NC5',
@@ -530,7 +514,6 @@ Te esperamos lá. 💜
 
 Att, Secretaria MVP`,
         attachments: [],
-        nextAction: 'Trocar status para "Em Integração". Avisar o pastor e a equipe que [Membro] será apresentado(a) no próximo culto de ceia. Avançar para NC6 (cadastro no Enuves) e enviar NC7.',
     },
     {
         id: 'NC6',
@@ -546,7 +529,6 @@ Att, Secretaria MVP`,
             'Atualizar tags no WhatsApp Business: "Membro" + "Em Integração".',
             'Confirmar que o cadastro foi salvo corretamente.',
         ],
-        nextAction: 'Após o cadastro no Enuves, enviar NC7 (Integração com a Geração) em até 2 dias.',
     },
     {
         id: 'NC7',
@@ -576,7 +558,6 @@ Me confirma por aqui que em breve o líder entrará em contato para combinarem o
 
 Att, Secretaria MVP`,
         attachments: [],
-        nextAction: 'Aguardar confirmação do membro. Avançar para NC8 (Agendar Conversa com Líder da Geração).',
     },
     {
         id: 'NC8',
@@ -593,7 +574,6 @@ Att, Secretaria MVP`,
             'Acompanhar: confirmar com o líder que a conversa aconteceu.',
             'Trocar status para "Integrado" após a confirmação da conversa.',
         ],
-        nextAction: 'Confirmar com o líder que a conversa aconteceu. Quando concluído, avançar para NC9 (Convite MVP 360) após ~30 dias congregando.',
     },
     {
         id: 'NC9',
@@ -624,7 +604,6 @@ Me confirma aqui e em breve te passamos todos os detalhes da próxima turma! �
 
 Att, Secretaria MVP`,
         attachments: [{ label: 'Arte / Informativo do MVP 360 (quando disponível)', link: '' }],
-        nextAction: 'Aguardar confirmação. SE confirmar → registrar na lista do MVP 360 e enviar data/local. Trocar status para "MVP 360 Confirmado".',
     },
 ];
 
