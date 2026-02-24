@@ -1,0 +1,5 @@
+{
+  "name": "Epson Printer Signage Generator",
+  "description": "Generates printable A4 notices for printer usage rules, tips, and shutdown procedures.",
+  "requestFramePermissions": []
+}
